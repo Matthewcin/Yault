@@ -1,0 +1,73 @@
+    :root{
+      --bg: linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0b1324 100%);
+      --glass-bg: rgba(255,255,255,0.08);
+      --glass-border: rgba(255,255,255,0.25);
+      --txt: #e5e7eb;
+      --muted: #94a3b8;
+      --acc: #a78bfa;
+      --danger: #ef4444;
+      --ok: #22c55e;
+      --shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.06);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100svh; color:var(--txt);
+      background: var(--bg); font: 16px/1.4 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      display:grid; place-items:center; padding:24px;
+    }
+    .shell{
+      width:min(980px,100%); display:grid; gap:18px;
+    }
+    .glass{
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    header.glass{
+      padding:18px 20px; display:flex; align-items:center; justify-content:space-between;
+    }
+    header h1{margin:0; font-size:18px; letter-spacing:.4px}
+    header .status{font-size:12px; color:var(--muted)}
+    .auth, .app{padding:22px}
+    .logo{
+      display:flex; align-items:center; gap:12px;
+    }
+    .pill{padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18); font-size:12px; color:var(--muted)}
+    .row{display:flex; gap:12px; flex-wrap:wrap}
+    input, textarea{
+      width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06); color:var(--txt); outline:none;
+    }
+    textarea{min-height:90px; resize:vertical}
+    input::placeholder, textarea::placeholder{color: #9aa7bd}
+    button{
+      appearance:none; border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08); color:var(--txt);
+      padding:12px 16px; border-radius:12px; cursor:pointer;
+      transition:transform .06s ease, background .2s ease; font-weight:600;
+    }
+    button:hover{transform:translateY(-1px); background: rgba(255,255,255,.12)}
+    .btn-primary{border-color: transparent; background: linear-gradient(135deg,#8b5cf6,#06b6d4)}
+    .btn-danger{border-color: rgba(239,68,68,.5); background: rgba(239,68,68,.14)}
+    .btn-ghost{background: transparent; border-color: rgba(255,255,255,.12)}
+    .grid{display:grid; gap:12px}
+    .two{grid-template-columns: repeat(2, minmax(0,1fr))}
+    .three{grid-template-columns: repeat(3, minmax(0,1fr))}
+    @media (max-width: 720px){ .two, .three{grid-template-columns: 1fr} }
+
+    .item{padding:16px; display:grid; gap:10px}
+    .item .meta{font-size:12px; color:var(--muted); display:flex; justify-content:space-between}
+    .list{display:grid; gap:12px}
+    .search{display:flex; gap:10px}
+    .empty{color:var(--muted); text-align:center; padding:24px}
+    .badge{padding:2px 8px; border-radius:999px; font-size:11px; background: rgba(99,102,241,.18); border:1px solid rgba(99,102,241,.35)}
+    .footer{font-size:12px; color:var(--muted); text-align:center; padding:8px}
+    .hint{font-size:12px; color:var(--muted)}
+    .danger{color:var(--danger)}
+    .ok{color:var(--ok)}
+    .right{margin-left:auto}
+    .copy{font-size:12px}
